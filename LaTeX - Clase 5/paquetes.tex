@@ -18,24 +18,29 @@
             top = 2cm,     %margen superior
             bottom = 2cm]  %margen inferior
 {geometry} 
-            
-            
+                 
 \usepackage{anyfontsize} %tamaño del texto dentro de un entorno
 
 \linespread{0.95} %interlineado general
 \usepackage{setspace} % interlineado dentro del entorno \begin{spacing}{#}
 
-
 \usepackage{enumitem} %Listas enumeradas
 
-\usepackage{booktabs} 
+\usepackage{booktabs} %Hace las tablas más bonitas. Pueden usar los siguientes comandos:
+%\toprule,
+%\midrule
+%\botomrule
+%\cmidrule{m-n}mn
+%\cmidrule(lr){m-n}
 
 \usepackage{graphicx} % insertar imagenes
 \usepackage{float} % ubicación de imagenes flotantes
 
-\usepackage{fancyhdr}
+
+%Modificar los encabezados o pies de págnia
+\usepackage{fancyhdr} 
 \pagestyle{fancy}
-\fancyhead[c]{\small \textcolor{azul}{C. Rondan et al.}}
+\fancyhead[c]{\small \textcolor{azul}{C. Rondan et al.}} 
 \fancyhead[r]{{| N° Pag.\thepage}}
 \fancyhead[l]{}
 \fancyfoot[c]{Universidad Nacional de Ingeniería}
@@ -44,21 +49,21 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-\usepackage{xcolor}
-\definecolor{azul}{rgb}{0.11,0.38,0.65}
+\usepackage{xcolor} %Paquete que nos permite usar un amplio abanico de colores
+\definecolor{azul}{rgb}{0.11,0.38,0.65} %definir colores --> color{azul}
 \definecolor{gris}{gray}{0.875}
 \definecolor{rojo}{rgb}{0.65,0.12,0.06}
 
-
+% Titlesec sirve para modificar el formato de los capítulos, secciones, subsecciones, etc..
 \usepackage{titlesec}
 \titleformat
-{\section}
+{\section} %elegimos el nivel: captíulo, section, subsection ....
 [hang]
-{\normalsize\bf}
-{}
-{0pt}
-{\Large}
-[\vspace{-0.4cm}\rule{\textwidth}{0.3pt}]
+{\Large\bf} % modifica las características que tendrá la siguiente línea de código
+{\thesection.  } % Se puede poner algo antes del texto, por ejemplo la numeración 1.  o tal vez poner 'Capítulo' ...
+{0pt} % Modifica el espacio izquierdo del texto, |INTRODUCCIÓN,  |    INTRODUCCIÓN 
+{\Large} %modifica el texto, por ejemplo: que sea grande, cursiva, color azul, etc...s
+[\vspace{-0.4cm}\rule{\textwidth}{0.3pt}] 
 
 \titleformat
 {\subsection}
@@ -66,41 +71,44 @@
 {\normalsize\bf}
 {}
 {0pt}
-{\itshape\Large}
+{\itshape\large}
 {}
+
+% MODIFICAR FUENTES, COLORES, ESAPCIOS DE LAS TABLAS DE CONTENIDO: TOC, LOF, LOT
+%TOC: Tabla de contenidos
+%LOF: Lista de figuras
+%LOT: Lista de tablas
+\usepackage{tocloft}
+\setlength{\cftbeforetoctitleskip}{1cm} % espacio antes de la tabla de TOC
+\setlength{\cftaftertoctitleskip}{-1cm} % espacio despues del TOC
+
+\renewcommand{\cfttoctitlefont}{\bf\color{azul}\hfil\scshape} % configuración del titulo del TOC
+% cambiar lo que está en {} por toc, lof o lot---> \cft{toc}titlefont
+
+%%% Modificar texto, incluye tamaño, color, tipo de texto ,etc...
+\renewcommand{\cftsecfont}{\bf\color{rojo}} %modificar el texto TOC de section
+\renewcommand{\cftsubsecfont}{}  %modificar el texto TOC de subsection
+
+
+%%% Modificar
+\renewcommand{\cftsecpagefont}{\color{rojo}} % modificar el color de la numeración de la TOC en section
+\renewcommand{\cftsubsecpagefont}{}% modificar el color de la numeración de la TOC en subsection
+
 
 
 
 
 %%%%%%%%%%%% FUNCIONES %%%%%%%%%%%%%%%%%%%%
 \newcommand{\lista}[1]{
-\begin{enumerate}[itemsep = -3pt, leftmargin = 15pt, label = \bf\alph*)]
-    #1
-\end{enumerate}
+	\begin{enumerate}[itemsep = -3pt, leftmargin = 15pt, label = \bf\alph*)]
+		#1
+	\end{enumerate}
 }
 \newcommand{\figura}[3]{
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width = #1]{figuras/#2}]
-    \caption{#3}
-\end{figure}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width = #1]{figuras/#2}]
+		\caption{#3}
+	\end{figure}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage{tocloft}
-\setlength{\cftbeforetoctitleskip}{1cm} %antes
-\setlength{\cftaftertoctitleskip}{-1cm} % despues
-
-\renewcommand{\cfttoctitlefont}{\bf\color{azul}\hfil\scshape} % configuración del titulo del TOC
-% cambiar lo que está en {}---> \cft{toc}titlefont
-% por toc (talba de contenidos), lof (lista de figuras), lot (lista de tablas)
-
-
-
-\renewcommand{\cftsecfont}{\bf\color{rojo}} %modificar el texto TOC de section
-\renewcommand{\cftsubsecfont}{}  %modificar el texto TOC de subsection
-
-
-
-\renewcommand{\cftsecpagefont}{\color{rojo}} % modificar el color de la numeración de la TOC en section
-\renewcommand{\cftsubsecpagefont}{}% modificar el color de la numeración de la TOC en subsection
