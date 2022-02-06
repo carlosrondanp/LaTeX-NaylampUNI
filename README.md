@@ -4,6 +4,7 @@
 </em></p>
 
 [![Linkedin: CarlosRondan](https://img.shields.io/badge/-CarlosRondan-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/carlosrondanp/)](https://www.linkedin.com/in/carlosrondanp/)
+[![Youtube: Carlos Rondan](https://img.shields.io/badge/-CarlosRondan-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/carlosrondanp/)](https://www.youtube.com/playlist?list=PLYKR65A34eYptNzV0_maP3Yr8JyPAO9ED)
 [![GitHub carlosrondanp](https://img.shields.io/github/followers/carlosrondanp?label=follow&style=social)](https://github.com/carlosrondanp)
 
 
@@ -19,7 +20,6 @@
 	\github{carlosrondanp}\\
 	\address{Lima, Perú}
 	\smartphone{988-811-993}
-	\youtube{\url{https://youtube.com/playlist?list=PLYKR65A34eYptNzV0_maP3Yr8JyPAO9ED}}
 }
 ```
 
