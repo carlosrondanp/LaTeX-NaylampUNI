@@ -12,20 +12,23 @@
             amsfonts, 
             amssymb}
 
-\usepackage[left = 2.5cm, 
-            right = 1.5cm,
-            top = 2cm,
-            bottom = 2cm]{geometry}
+% geometry: configuración de los margenes de tu artículo
+\usepackage[left = 2.5cm,  %margen izquierdo
+            right = 1.5cm, %margen derecho
+            top = 2cm,     %margen superior
+            bottom = 2cm]  %margen inferior
+{geometry} 
             
-\usepackage{anyfontsize} %tamaño del texto
+            
+\usepackage{anyfontsize} %tamaño del texto dentro de un entorno
 
-\linespread{0.95} %interlineado
-\usepackage{setspace} % espaciado dentro de un entorno
+\linespread{0.95} %interlineado general
+\usepackage{setspace} % interlineado dentro del entorno \begin{spacing}{#}
 
 
 \usepackage{enumitem} %Listas enumeradas
 
-\usepackage{booktabs}
+\usepackage{booktabs} 
 
 \usepackage{graphicx} % insertar imagenes
 \usepackage{float} % ubicación de imagenes flotantes
