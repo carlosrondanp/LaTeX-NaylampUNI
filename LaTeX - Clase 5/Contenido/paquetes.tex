@@ -1,0 +1,114 @@
+\usepackage[utf8]{inputenc} % codificoación: ñ, diéresis, etc..
+\usepackage[T1]{fontenc} % sin esto tendríamos que poner \'a
+\usepackage{lipsum} % texto aleatorio
+\usepackage[spanish]{babel}
+\title{Articulo}
+\author{Carlos Rondán}
+\date{\today}
+
+%AMS: American Mathematical society --> uso de fórmulas matemáticas
+\usepackage{amsmath, 
+            bm, 
+            amsfonts, 
+            amssymb}
+
+% geometry: configuración de los margenes de tu artículo
+\usepackage[left = 2.5cm,  %margen izquierdo
+            right = 1.5cm, %margen derecho
+            top = 2cm,     %margen superior
+            bottom = 2cm]  %margen inferior
+{geometry} 
+                 
+\usepackage{anyfontsize} %tamaño del texto dentro de un entorno
+
+\linespread{0.95} %interlineado general
+\usepackage{setspace} % interlineado dentro del entorno \begin{spacing}{#}
+
+\usepackage{enumitem} %Listas enumeradas
+
+\usepackage{booktabs} %Hace las tablas más bonitas. Pueden usar los siguientes comandos:
+%\toprule,
+%\midrule
+%\botomrule
+%\cmidrule{m-n}mn
+%\cmidrule(lr){m-n}
+
+\usepackage{graphicx} % insertar imagenes
+\usepackage{float} % ubicación de imagenes flotantes
+
+
+%Modificar los encabezados o pies de págnia
+\usepackage{fancyhdr} 
+\pagestyle{fancy}
+\fancyhead[c]{\small \textcolor{azul}{C. Rondan et al.}} 
+\fancyhead[r]{{| N° Pag.\thepage}}
+\fancyhead[l]{}
+\fancyfoot[c]{Universidad Nacional de Ingeniería}
+\fancyfoot[l]{}
+\fancyfoot[r]{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\usepackage{xcolor} %Paquete que nos permite usar un amplio abanico de colores
+\definecolor{azul}{rgb}{0.11,0.38,0.65} %definir colores --> color{azul}
+\definecolor{gris}{gray}{0.875}
+\definecolor{rojo}{rgb}{0.65,0.12,0.06}
+
+% Titlesec sirve para modificar el formato de los capítulos, secciones, subsecciones, etc..
+\usepackage{titlesec}
+\titleformat
+{\section} %elegimos el nivel: captíulo, section, subsection ....
+[hang]
+{\Large\bf} % modifica las características que tendrá la siguiente línea de código
+{\thesection.  } % Se puede poner algo antes del texto, por ejemplo la numeración 1.  o tal vez poner 'Capítulo' ...
+{0pt} % Modifica el espacio izquierdo del texto, |INTRODUCCIÓN,  |    INTRODUCCIÓN 
+{\Large} %modifica el texto, por ejemplo: que sea grande, cursiva, color azul, etc...s
+[\vspace{-0.4cm}\rule{\textwidth}{0.3pt}] 
+
+\titleformat
+{\subsection}
+[hang]
+{\normalsize\bf}
+{}
+{0pt}
+{\itshape\large}
+{}
+
+% MODIFICAR FUENTES, COLORES, ESAPCIOS DE LAS TABLAS DE CONTENIDO: TOC, LOF, LOT
+%TOC: Tabla de contenidos
+%LOF: Lista de figuras
+%LOT: Lista de tablas
+\usepackage{tocloft}
+\setlength{\cftbeforetoctitleskip}{1cm} % espacio antes de la tabla de TOC
+\setlength{\cftaftertoctitleskip}{-1cm} % espacio despues del TOC
+
+\renewcommand{\cfttoctitlefont}{\bf\color{azul}\hfil\scshape} % configuración del titulo del TOC
+% cambiar lo que está en {} por toc, lof o lot---> \cft{toc}titlefont
+
+%%% Modificar texto, incluye tamaño, color, tipo de texto ,etc...
+\renewcommand{\cftsecfont}{\bf\color{rojo}} %modificar el texto TOC de section
+\renewcommand{\cftsubsecfont}{}  %modificar el texto TOC de subsection
+
+
+%%% Modificar
+\renewcommand{\cftsecpagefont}{\color{rojo}} % modificar el color de la numeración de la TOC en section
+\renewcommand{\cftsubsecpagefont}{}% modificar el color de la numeración de la TOC en subsection
+
+
+
+
+
+%%%%%%%%%%%% FUNCIONES %%%%%%%%%%%%%%%%%%%%
+\newcommand{\lista}[1]{
+	\begin{enumerate}[itemsep = -3pt, leftmargin = 15pt, label = \bf\alph*)]
+		#1
+	\end{enumerate}
+}
+\newcommand{\figura}[3]{
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width = #1]{figuras/#2}]
+		\caption{#3}
+	\end{figure}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

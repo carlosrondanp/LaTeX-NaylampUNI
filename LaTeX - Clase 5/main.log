@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.25)  6 FEB 2022 12:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.25)  6 FEB 2022 12:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -406,8 +406,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- (./introduccion.tex
-[1
+
+(./Contenido/introduccion.tex [1
 
 {c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
@@ -444,7 +444,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[3]) (./antecedentes.tex
+[3]) (./Contenido/antecedentes.tex
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -453,8 +453,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[4 <./figuras/cluster_3D.PNG> <./figuras/cluster_3D.PNG>]) (./metodologia.tex)
-(./resultados.tex) (./conclusiones.tex)
+[4 <./figuras/cluster_3D.PNG> <./figuras/cluster_3D.PNG>])
+(./Contenido/metodologia.tex) (./Contenido/resultados.tex)
+(./Contenido/conclusiones.tex)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -468,8 +469,8 @@ LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 ) ) 
 Here is how much of TeX's memory you used:
- 7055 strings out of 478287
- 109262 string characters out of 5850749
+ 7057 strings out of 478287
+ 109532 string characters out of 5850749
  518447 words of memory out of 5000000
  25126 multiletter control sequences out of 15000+600000
  485194 words of font info for 67 fonts, out of 8000000 for 9000
