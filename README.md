@@ -19,7 +19,7 @@
 	\github{carlosrondanp}\\
 	\address{Lima, Perú}
 	\smartphone{988-811-993}
-	\youtube{<a href="https://youtube.com/playlist?list=PLYKR65A34eYptNzV0_maP3Yr8JyPAO9ED">Carlos Rondan</a>}
+	\youtube{<a href="https://youtube.com/playlist?list=PLYKR65A34eYptNzV0_maP3Yr8JyPAO9ED">Carlos_Rondan</a>}
 }
 ```
 
