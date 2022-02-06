@@ -1,0 +1,103 @@
+\usepackage[utf8]{inputenc} % codificoación: ñ, diéresis, etc..
+\usepackage[T1]{fontenc} % sin esto tendríamos que poner \'a
+\usepackage{lipsum} % texto aleatorio
+\usepackage[spanish]{babel}
+\title{Articulo}
+\author{Carlos Rondán}
+\date{\today}
+
+%AMS: American Mathematical society --> uso de fórmulas matemáticas
+\usepackage{amsmath, 
+            bm, 
+            amsfonts, 
+            amssymb}
+
+\usepackage[left = 2.5cm, 
+            right = 1.5cm,
+            top = 2cm,
+            bottom = 2cm]{geometry}
+            
+\usepackage{anyfontsize} %tamaño del texto
+
+\linespread{0.95} %interlineado
+\usepackage{setspace} % espaciado dentro de un entorno
+
+
+\usepackage{enumitem} %Listas enumeradas
+
+\usepackage{booktabs}
+
+\usepackage{graphicx} % insertar imagenes
+\usepackage{float} % ubicación de imagenes flotantes
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[c]{\small \textcolor{azul}{C. Rondan et al.}}
+\fancyhead[r]{{| N° Pag.\thepage}}
+\fancyhead[l]{}
+\fancyfoot[c]{Universidad Nacional de Ingeniería}
+\fancyfoot[l]{}
+\fancyfoot[r]{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\usepackage{xcolor}
+\definecolor{azul}{rgb}{0.11,0.38,0.65}
+\definecolor{gris}{gray}{0.875}
+\definecolor{rojo}{rgb}{0.65,0.12,0.06}
+
+
+\usepackage{titlesec}
+\titleformat
+{\section}
+[hang]
+{\normalsize\bf}
+{}
+{0pt}
+{\Large}
+[\vspace{-0.4cm}\rule{\textwidth}{0.3pt}]
+
+\titleformat
+{\subsection}
+[hang]
+{\normalsize\bf}
+{}
+{0pt}
+{\itshape\Lage}
+{}
+
+
+
+
+%%%%%%%%%%%% FUNCIONES %%%%%%%%%%%%%%%%%%%%
+\newcommand{\lista}[1]{
+\begin{enumerate}[itemsep = -3pt, leftmargin = 15pt, label = \bf\alph*)]
+    #1
+\end{enumerate}
+}
+\newcommand{\figura}[3]{
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = #1]{figuras/#2}]
+    \caption{#3}
+\end{figure}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tocloft}
+\setlength{\cftbeforetoctitleskip}{1cm} %antes
+\setlength{\cftaftertoctitleskip}{-1cm} % despues
+
+\renewcommand{\cfttoctitlefont}{\bf\color{azul}\hfil\scshape} % configuración del titulo del TOC
+% cambiar lo que está en {}---> \cft{toc}titlefont
+% por toc (talba de contenidos), lof (lista de figuras), lot (lista de tablas)
+
+
+
+\renewcommand{\cftsecfont}{\bf\color{rojo}} %modificar el texto TOC de section
+\renewcommand{\cftsubsecfont}{}  %modificar el texto TOC de subsection
+
+
+
+\renewcommand{\cftsecpagefont}{\color{rojo}} % modificar el color de la numeración de la TOC en section
+\renewcommand{\cftsubsecpagefont}{}% modificar el color de la numeración de la TOC en subsection
