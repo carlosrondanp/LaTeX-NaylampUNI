@@ -1,16 +1,24 @@
-\usepackage[utf8]{inputenc} %% codificoación: ñ, diéresis, etc..
+\usepackage[utf8]{inputenc} %%  codificoación: ñ, diéresis, etc..
+\usepackage[T1]{fontenc} % Sin esto tendíamos que poner \'a
 \usepackage[spanish]{babel} %% traducir comandos de LaTeX
 \usepackage{xcolor} %% abanico amplio de colores
 \usepackage{graphicx} % insertar gráficas o imagenes
 \usepackage{float} % uso de imagenes flotantes
+\usepackage{array} %para poder definir el ancho de las columnas en mi tabla de la siguiente manera: \begin{tabular}{|m{2cm}|m{5cm}}
 \usepackage{booktabs} % dar mejor formato de tablas, uso de toprule, midrule,.... 
 \usepackage{enumitem} % modificar listas numericas, alphanimericas, etc...
 \usepackage{lipsum} % paquete para texto aleatorio
 \usepackage{anyfontsize} %tamaño del texto
 \usepackage{ragged2e} %para justificar un texto
 \usepackage{hyperref} %para referenciar
-
 \setlength{\columnsep}{30pt}
+
+
+\hypersetup{
+colorlinks = true, % si pones true elimina las cajas
+linkcolor = rojo,
+citecolor = azul 
+}
 
 %AMS ---> Formulas matemáticas
 \usepackage{amsmath, 
@@ -19,7 +27,7 @@
             amssymb}
 \usepackage{geometry} % modificación de márgenes
 \geometry{
-    top = 0.5in,
+    top = 0.8in,
     inner = 0.5in,
     outer = 0.5in,
     bottom = 0.9in,
@@ -30,8 +38,8 @@
 \usepackage{fancyhdr} %modificación del encabezado y el pie de página
 \pagestyle{fancy}
 
-\fancyhead[c]{} 
-\fancyhead[r]{}
+\fancyhead[c]{\small\color{azul} C. Rondan et. al} 
+\fancyhead[r]{\color{gray} $|$ pag. N° \small\thepage}
 \fancyhead[l]{}
 
 \fancyfoot[c]{}
@@ -41,5 +49,109 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
+\definecolor{azul}{rgb}{0.11,0.38,0.65} %definir colores --> color{azul}
+\definecolor{gris}{gray}{0.2}
+\definecolor{rojo}{rgb}{0.65,0.12,0.06}
 
 
+% Titlesec sirve para modificar el formato de los capítulos, secciones, subsecciones, etc..
+\usepackage{titlesec}
+\titleformat
+{\section} %elegimos el nivel: captíulo, section, subsection ....
+[hang]
+{\Large\bf} % modifica las características que tendrá la siguiente línea de código
+{\thesection.  } % Se puede poner algo antes del texto, por ejemplo la numeración 1.  o tal vez poner 'Capítulo' ...
+{0pt} % Modifica el espacio izquierdo del texto, |INTRODUCCIÓN,  |    INTRODUCCIÓN 
+{\Large} %modifica el texto, por ejemplo: que sea grande, cursiva, color azul, etc...s
+[\vspace{-0.4cm}\rule{0.47\textwidth}{0.2pt}] 
+
+\titleformat
+{\subsection}
+[hang]
+{\normalsize\bf}
+{}
+{0pt}
+{\itshape\large}
+{}
+
+\newcommand{\Color}[1]{\hypersetup{linkcolor=#1}\color{#1}} % lo usaremos para chancar los colores y priorizar la coniguración de lo hipervinculos
+
+\usepackage{tocloft}
+%%%%%%%%%% ESPACIO ENTRE INDICE, INDICE DE FIGURAS E INDICE DE CUADROS
+\setlength{\cftbeforetoctitleskip}{.5cm} % espacio antes de la tabla de TOC
+\setlength{\cftaftertoctitleskip}{0cm} % espacio despues del TOC
+
+\setlength{\cftbeforeloftitleskip}{.5cm} % espacio antes de la tabla de LOF
+\setlength{\cftafterloftitleskip}{0cm} % espacio despues del LOC
+
+\setlength{\cftbeforelottitleskip}{.5cm} % espacio antes de la tabla de LOF
+\setlength{\cftafterlottitleskip}{0cm} % espacio despues del LOC
+
+%%%%%%%%%% CONFIGURACIÓN DE LETRA DE INDICE, INDICE DE FIGURAS Y,..
+\renewcommand{\cfttoctitlefont}{\bf\color{azul}\hfil\Large\sffamily} % configuración del titulo del TOC
+% cambiar lo que está en {} por toc, lof o lot---> \cft{toc}titlefont
+\renewcommand{\cftloftitlefont}{\bf\color{azul}\hfil\Large\sffamily} 
+\renewcommand{\cftlottitlefont}{\bf\color{azul}\hfil\Large\sffamily} 
+
+
+%%%%%%%%%% TIPO DE LETRA DE SECCIÓN, SUBSECCIÓN, FIGURA, TABLA
+%%% Modificar texto, incluye tamaño, color, tipo de texto ,etc...
+\renewcommand{\cftsecfont}{\bf\Color{black}} %modificar el texto TOC de section
+\renewcommand{\cftsubsecfont}{\Color{gris}}  %modificar el texto TOC de subsection
+
+\renewcommand\cftfigfont{\bf\Color{black}}
+
+\renewcommand\cfttabfont{\bf\Color{black}}
+
+%%%%%%%%%%% CONFIGURACIÓN DE LA NUMERACIÓN
+\renewcommand{\cftsecpagefont}{\color{gris}} % modificar el color de la numeración de la TOC en section
+\renewcommand{\cftsubsecpagefont}{\color{gris}} %modificar el color de la numeración de la TOC en subsection
+
+\renewcommand{\cftfigpagefont}{\color{gris}}
+
+\renewcommand{\cfttabpagefont}{\color{gris}}
+
+
+%%%%%%%%%%%% 
+\setlength{\cftbeforesecskip}{0.15cm} %espacio antes de cada sección (en la tabla)
+\setlength{\cftbeforesubsecskip}{0.15cm} %espacio antes de cada subsección (en la tabla)
+\setlength{\cftbeforesubsubsecskip}{0.15cm}%espacio antes de cada subsubsección 
+
+\setlength{\cftbeforefigskip}{0.15cm}
+
+\setlength{\cftbeforetabskip}{0.15cm}
+
+%%%%%%%%%%% AÑADIR SECCION, SUBSECCION, FIGURA, TABLA EN INDICE
+
+\renewcommand\cftsecpresnum{\sffamily Sección }
+\setlength{\cftsecnumwidth}{2.0cm} %distancia de las palabras con la numeración (section)
+\renewcommand\cftsubsecpresnum{\sffamily Sub sección }
+\setlength{\cftsubsecnumwidth}{2.5cm} %distancia de la letra al numero 1. (espacio) nombre
+
+\renewcommand\cftfigpresnum{\sffamily Figura }
+\setlength{\cftfignumwidth}{1.8cm}
+
+\renewcommand\cfttabpresnum{\sffamily Figura }
+\setlength{\cfttabnumwidth}{1.8cm}
+
+
+%%%%%%%%%%%%%% PUNTOS EN EL INDICE , FIGURAS Y EN TABLAS
+\renewcommand\cftsecleader{\cftdotfill{2}}
+\renewcommand\cftsubsecleader{\cftdotfill{5}}
+
+\renewcommand\cftfigleader{\cftdotfill{5}}
+
+\renewcommand\cfttableader{\cftdotfill{5}}
+
+%%%%%%%%%%%%%%%%
+
+
+
+
+\addto\captionsspanish{\renewcommand{\figurename}{\small\sffamily \textcolor{azul}{\bfseries Fig. N°}}}  %cambia formato del caption   % le quité \itshape
+\addto\captionsspanish{\renewcommand{\tablename}{\small\sffamily \textcolor{azul}{\bfseries Tabla N°}}}  %cambia formato del caption
+
+
+
+\usepackage[square,numbers]{natbib} %[square,numbers] , round
+\bibliographystyle{unsrtnat} %abbrvnat
