@@ -1,0 +1,32 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bansal and Singhrova(2021)]{bansal2021performance}
+Aayushi Bansal and Anita Singhrova.
+\newblock Performance analysis of supervised machine learning algorithms for
+  diabetes and breast cancer dataset.
+\newblock In \emph{2021 International Conference on Artificial Intelligence and
+  Smart Systems (ICAIS)}, pages 137--143. IEEE, 2021.
+
+\bibitem[Dhasaradhan et~al.(2021)Dhasaradhan, Jaichandran, Shunmuganathan,
+  Usha~Kiruthika, and Rajaprakash]{dhasaradhan2021hybrid}
+K.~Dhasaradhan, R.~Jaichandran, KL. Shunmuganathan, S~Usha~Kiruthika, and
+  S.~Rajaprakash.
+\newblock Hybrid machine learning model using decision tree and support vector
+  machine for diabetes identification.
+\newblock In \emph{Data Engineering and Intelligent Computing}, pages 293--305.
+  Springer, 2021.
+
+\bibitem[Reddy et~al.(2020)Reddy, Mounika, Sindhu, Reddy, Reddy, Sri, Swaraja,
+  Meenakshi, and Kora]{reddy2020predictive}
+D~Jashwanth Reddy, B~Mounika, S~Sindhu, T~Pranayteja Reddy, N~Sagar Reddy,
+  G~Jyothsna Sri, K~Swaraja, K~Meenakshi, and Padmavathi Kora.
+\newblock Predictive machine learning model for early detection and analysis of
+  diabetes.
+\newblock \emph{Materials Today: Proceedings}, 2020.
+
+\end{thebibliography}

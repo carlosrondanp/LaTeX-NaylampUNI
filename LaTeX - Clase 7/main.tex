@@ -1,0 +1,93 @@
+\documentclass{report}
+\input{paquetes}
+
+\title{"REDUCCIÓN DE COSTOS EN EL PROCESO DE ACONDICIONADO Y ARMADO PROMOCIONAL DE PRODUCTOS''}
+\author{CARLOS ENRIQUE RONDAN POMA}
+\date{\today}
+
+\makeatletter
+\let\newtitle\@title
+\let\newauthor\@author
+\let\newdate\@date
+\makeatother
+
+\begin{document}
+\input{titulo.tex}
+
+\newpage 
+
+\fontsize{13pt}{15pt}\selectfont
+
+
+\chapter*{DEDICATORIA}
+\addcontentsline{toc}{chapter}{DEDICATORIA}
+\begin{flushright}
+\lipsum[4]
+\end{flushright}
+\newpage
+
+
+\tableofcontents
+\newpage 
+
+\chapter*{RESUMEN}
+\addcontentsline{toc}{chapter}{RESUMEN}
+\lipsum[1-2]
+\chapter*{INTRODUCCIÓN}
+\addcontentsline{toc}{chapter}{INTRODUCCIÓN}
+\lipsum[1-2]
+
+\chapter{PENSAMIENTO ESTRATÉGICO}
+\section{DIAGNÓSTICO FUNCIONAL}
+\subsection{Historia de Empresa}
+\lipsum[1-3]
+\subsection{Organización}
+\lipsum[5-9]
+\subsection{Servicios}
+\lipsum[1-3]
+Así se hace un llamado a una cita  \cite{reddy2020predictive} o tal vez \citet{bansal2021performance} o posiblemente \citep{dhasaradhan2021hybrid}, también podemos citar solo autores:
+\citeauthor{bansal2021performance}
+y solo años \citeyear{dhasaradhan2021hybrid}
+\subsection{Clientes}
+
+\subsection{Proveedores}
+
+\section{DIAGNÓSTICO ESTRATÉGICO}
+\subsection{Misión}
+\subsection{Visión}
+\subsubsection{Análisis FODA}
+
+\chapter{MARCO TEÓRICO}
+\section{LOGÍSTICA}
+\subsection{Planificación de compras}
+\subsection{Cronograma de Materiales}
+\section{LEAN SIX SIGMA}
+
+
+\renewcommand{\bibname}{REFERENCIAS BIBLIOGRÁFICAS}
+\addcontentsline{toc}{chapter}{REFERENCIAS BIBLIOGRÁFICAS}
+\bibliography{library.bib}
+
+\appendix 
+\titleformat
+{\chapter} %elegimos el nivel: captíulo, section, subsection ....
+[hang]
+{\Large\bf\filcenter} % modifica las características que tendrá la siguiente línea de código
+{Anexo \thechapter. } % Se puede poner algo antes del texto, por ejemplo la numeración 1.  o tal vez poner 'Capítulo' ...
+{0pt} % Modifica el espacio izquierdo del texto, |INTRODUCCIÓN,  |    INTRODUCCIÓN 
+{\Large} %modifica el texto, por ejemplo: que sea grande, cursiva, color azul, etc...s
+[] 
+
+
+
+\begin{appendix}
+\addappheadtotoc
+\appendixpage
+\chapter{Matriz de consistencia}
+\lipsum[1-4]
+\chapter{Trabla de lo que sea}
+\lipsum[1-4]
+\end{appendix}
+
+
+\end{document}
